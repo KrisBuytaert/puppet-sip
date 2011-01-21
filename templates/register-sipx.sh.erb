@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ -e /tmp/<%= clientname %> ]; then 
+	exit 0 
+
+else 
+	cd /tmp
+	wget --user=<%= clientname %> --password=<%= password %> --no-check-certificate https://sipx-a:8443/sipxconfig/initial-config/<%= clientname %>
+	exit $? 
+fi 
