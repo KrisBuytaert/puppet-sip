@@ -44,7 +44,7 @@ class sipx {
 				enable => true,
 				hasstatus => true,
 				ensure =>  $ensure_service,
-				require => [Package["sipxecs"],File["/etc/sipxpbx/sipxconfig-netif","/etc/sipxpbx/domain-config"]];
+				require => [Package["sipxecs"],File["/etc/sipxpbx/sipxconfig-netif","/etc/sipxpbx/domain-config","/etc/sipxpbx/ssl/ssl.crt","/etc/sipxpbx/ssl/ssl.key","/var/sipxdata/process-state/ConfigServer"]];
 						
 	}
 }
