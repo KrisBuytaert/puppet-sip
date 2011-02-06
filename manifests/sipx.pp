@@ -40,15 +40,30 @@ class sipx {
 			"iptables":
 				ensure => stopped,
 				enable => false;
+	}
+}
+define sipx::runslave {
+	service {
 			"sipxecs":
 				enable => true,
 				hasstatus => true,
 				ensure =>  $ensure_service,
-				require => [Package["sipxecs"],File["/etc/sipxpbx/sipxconfig-netif","/etc/sipxpbx/domain-config","/etc/sipxpbx/ssl/ssl.crt","/etc/sipxpbx/ssl/ssl.key","/var/sipxdata/process-state/ConfigServer"]];
+				require => [Package["sipxecs"],File["/etc/sipxpbx/sipxconfig-netif","/etc/sipxpbx/domain-config","/etc/sipxpbx/ssl/ssl.crt","/etc/sipxpbx/ssl/ssl.key"]];
 						
 	}
 }
 
+
+define sipx::runmaster {
+
+	service { "sipxecs":
+				enable => true,
+				hasstatus => true,
+				ensure =>  $ensure_service,
+				require => [Package["sipxecs"],File["/etc/sipxpbx/sipxconfig-netif","/etc/sipxpbx/domain-config","/etc/sipxpbx/ssl/ssl.crt","/etc/sipxpbx/ssl/ssl.key","/var/sipxdata/process-state/ConfigServer"]];
+	}
+	
+}
 
 
 define sipx::netconfig ( $ipaddress, $netmask) 
