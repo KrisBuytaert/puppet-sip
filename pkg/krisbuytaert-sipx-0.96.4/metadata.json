@@ -1,0 +1,49 @@
+{
+  "description": "UNKNOWN",
+  "checksums": {
+    "lib/puppet/type/README.markdown": "34b8c80ba8683afca99f2d28ca7e70b2",
+    "spec/spec_helper.rb": "ca19ec4f451ebc7fdb035b52eae6e909",
+    "spec/unit/puppet/provider/README.markdown": "e52668944ee6af2fb5d5b9e798342645",
+    "files/Enabled": "7ebe58f0f5847aa72822a16eb9873b0e",
+    "files/ssl-cert/gen-ssl-keys.sh": "29a82daed60c1d0141f469f4950da6e1",
+    "files/README.markdown": "3d44458cc68d8513b51e3b56c604eec4",
+    "lib/puppet/provider/README.markdown": "3835801d7626dd8d541c4fdf7ca9f3e4",
+    "lib/puppet/parser/functions/README.markdown": "e596ce938864a80fd1e51640cca7f612",
+    "templates/genssl.sh.erb": "4757248db1552b8bfc65c4b79771399d",
+    "templates/SSL_DEFAULTS.erb": "6baf1715a864757a9f243a0f524c7010",
+    "templates/register-sipx.sh.erb": "5e3223ef8c55c0aa22876e270b31a146",
+    "README": "e0e6a305104b34d8a4c4078af5d74b70",
+    "templates/domain-config.erb": "6b2e5c7be6c5e5adb322736ae5c1cbdb",
+    "manifests/README.markdown": "b9970454391883e36b55137328792a55",
+    "files/genssl.sh": "d30f8d1256c8615d1c17c048bcef3796",
+    "tests/init.pp": "dfff526fefd4184641cc244ffcd195fc",
+    "templates/README.markdown": "aada0a1952329e46b98695349dba6203",
+    "spec/README.markdown": "32a1fc0121c28aff554ef5d422b8b51e",
+    "files/ssl-cert/ca_rehash": "d5c93d99e24f1a98118be4437a4831d5",
+    "templates/sipxsupervisor-config.erb": "daf7e7393deb158fd9504500c6d8f6ea",
+    "files/ssl-cert/upgrade-cert.sh": "27583c98cccf7932bea42a979de1a411",
+    "metadata.json": "d34d0b70aba36510fbc2df4e667479ef",
+    "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
+    "manifests/sipx.pp": "0a884fb8288e56beda0993591513fc41",
+    "files/ssl-cert/install-cert.sh": "d55adbb7dfe046412d3f3e5dfceb3cc0",
+    "lib/puppet/facter/README.markdown": "145e26334b4d80e48e9e55ba78800579",
+    "Modulefile": "51dbce4d73728ba98d45f3efb16f7ffe",
+    "templates/sipxconfig-netif.erb": "81866dd71e7066e52b66e6a5060ba9c5",
+    "spec/unit/puppet/type/README.markdown": "de26a7643813abd6c2e7e28071b1ef94",
+    "manifests/init.pp": "24ecf6ed56e753f8c50c566b7d3941a0",
+    "files/ssl-cert/check-cert.sh": "5d482accc04e785a8baa4c660d76d60a"
+  },
+  "source": "UNKNOWN",
+  "types": [
+
+  ],
+  "summary": "A module to deploy a sipXecs platform",
+  "author": "krisbuytaert",
+  "dependencies": [
+
+  ],
+  "project_page": "UNKNOWN",
+  "license": "GPL",
+  "version": "0.96.4",
+  "name": "krisbuytaert-sipx"
+}

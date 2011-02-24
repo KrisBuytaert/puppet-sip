@@ -7,6 +7,8 @@ class sipx {
 	package {	
 		"sipxecs":
 			ensure => present; 
+		"wireshark":
+			ensure => present; 
 	}
 
 
@@ -38,31 +40,15 @@ class sipx {
 			"iptables":
 				ensure => stopped,
 				enable => false;
-	}
-}
-class sipx::runslave inherits sipx {
-	service {
 			"sipxecs":
 				enable => true,
 				hasstatus => true,
 				ensure =>  $ensure_service,
-				require => [Package["sipxecs"],File["/etc/sipxpbx/sipxconfig-netif","/etc/sipxpbx/domain-config","/etc/sipxpbx/ssl/ssl.crt","/etc/sipxpbx/ssl/ssl.key"]];
+				require => [Package["sipxecs"],File["/etc/sipxpbx/sipxconfig-netif","/etc/sipxpbx/domain-config"]];
 						
 	}
 }
 
-
-class  sipx::runmaster inherits sipx {
-
-	service { "sipxecs":
-				enable => true,
-				hasstatus => true,
-				ensure =>  $ensure_service,
-				require => [File["/etc/sipxpbx/sipxconfig-netif","/etc/sipxpbx/domain-config","/etc/sipxpbx/ssl/ssl.crt","/etc/sipxpbx/ssl/ssl.key","/var/sipxdata/process-state/ConfigServer"]];
-	}
-	
-
-}
 
 
 define sipx::netconfig ( $ipaddress, $netmask) 
