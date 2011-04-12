@@ -5,6 +5,7 @@ if [ -e /tmp/<%= clientname %> ]; then
 
 else 
 	cd /tmp
-	wget --user=<%= clientname %> --password=<%= password %> --no-check-certificate https://sipx-a:8443/sipxconfig/initial-config/<%= clientname %>
+	wget --user=<%= clientname.downcase %> --password=<%= password %> --no-check-certificate https://<%= mastername %>:8443/sipxconfig/initial-config/<%= clientname.downcase %>
+
 	exit $? 
 fi 
