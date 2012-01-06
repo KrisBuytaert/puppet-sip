@@ -47,10 +47,6 @@ sipx::netconfig {
                 ipaddress => $ipaddres,
                 netmask => $netmask,
         }
-
-
-
-
 sipx::configserver{ "sipx": }
 sipx::staticcertdbca{ "$hostname": }
 sipx::staticcertdbnodes{ "$hostname": clientname => "node-a"; }
@@ -59,6 +55,10 @@ sipx::supervisor { "$hostname":
                         sipx_supervisor => "node-a.$platformdomainextension";
                 } 
 sipx::staticssl{ "$hostname": }
+include sipx::runmaster
+
+
+
 
 
 After deploying the device you need to go to the gui, set the password and configure the services you  need, 
@@ -73,8 +73,7 @@ sipx::netconfig {
                 ipaddress => $ipaddress,
                 netmask => $netmask;
         }
-
-
+include sipx::runslave
 sipx::register{ 
 	"$hostname": 
 	clientname =>"node-b.${platformdomainextension}",
@@ -83,7 +82,6 @@ sipx::supervisor { "$hostname":
                         sipx_supervisor => "node-a.$platformdomainextension";
                 } 
 sipx::staticssl{ "$hostname": }
-
 
 
 

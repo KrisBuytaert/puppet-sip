@@ -57,7 +57,7 @@ class  sipx::runmaster inherits sipx {
 	service { "sipxecs":
 				enable => true,
 				hasstatus => true,
-				ensure =>  $ensure_service,
+				ensure =>  "running",
 				require => [File["/etc/sipxpbx/sipxconfig-netif","/etc/sipxpbx/domain-config","/etc/sipxpbx/ssl/ssl.crt","/etc/sipxpbx/ssl/ssl.key","/var/sipxdata/process-state/ConfigServer"]];
 	}
 	
@@ -134,6 +134,16 @@ define sipx::gensslreq($platformdomainextension)
   			source => "puppet:///modules/sipx/genssl.sh",
   			mode => 755,
                		ensure => present;
+		"/etc/puppet/":
+               		ensure => directory;
+		"/etc/puppet/modules/":
+               		ensure => directory;
+		"/etc/puppet/modules/sipx/":
+               		ensure => directory;
+		"/etc/puppet/modules/sipx/files/":
+               		ensure => directory;
+		"/etc/puppet/modules/sipx/files/certdb/":
+               		ensure => directory;
 		"/etc/puppet/modules/sipx/files/certdb/SSL_DEFAULTS":
   			content => template("sipx/SSL_DEFAULTS.erb"),
               		ensure => present;

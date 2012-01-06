@@ -1,0 +1,5 @@
+[sipXecs]
+name=sipXecs build service for CentOS $releasever - $basearch
+baseurl=http://download.sipfoundry.org/pub/sipXecs/4.2.1/CentOS_$releasever/
+enabled=1
+gpgcheck=0
